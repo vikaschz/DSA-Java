@@ -1,3 +1,5 @@
+package patterns;
+
 import java.lang.reflect.Method;
 import java.util.Scanner;
 
@@ -440,7 +442,7 @@ public class Pattern {
         for (Method m : methods) {
             if (!m.getName().equals("main")) {
                 try {
-                    System.out.println("\nPattern: " + m.getName());
+                    System.out.println("\npatterns.Pattern: " + m.getName());
                     m.invoke(p,5);
                 } catch (Exception e) {
                     e.printStackTrace();
