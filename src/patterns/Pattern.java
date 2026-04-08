@@ -1,12 +1,11 @@
 package patterns;
-
-import java.lang.reflect.Method;
 import java.util.Scanner;
-
+//methods of all patterns
 class Pat
 {
 
     void square(int n) {
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print("*");
@@ -15,7 +14,7 @@ class Pat
         }
     }
 
-    void L_Tri(int n) {
+    void leftTriangle(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= i; j++) {
                 System.out.print("*");
@@ -25,7 +24,7 @@ class Pat
         }
     }
 
-    void Inv_L_Tri(int n) {
+    void invertedLeftTriangle(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i; j++) {
                 System.out.print("*");
@@ -35,7 +34,7 @@ class Pat
         }
     }
 
-    void R_Tri(int n) {
+    void rightTriangle(int n) {
         for (int i = 0; i < n; i++) {
             //spaces
             for (int j = 0; j < n - i; j++) {
@@ -50,7 +49,7 @@ class Pat
         }
     }
 
-    void Inv_R_Tri(int n) {
+    void invertedRightTriangle(int n) {
         for (int i = 0; i < n; i++) {
             //spaces
             for (int j = 1; j <= i; j++) {
@@ -80,7 +79,7 @@ class Pat
         }
     }
 
-    void Inv_pyramid(int n) {
+    void invertedPyramid(int n) {
         for (int i = 0; i < n; i++) {
 
             //spaces
@@ -126,7 +125,7 @@ class Pat
         }
     }
 
-    void Hollow_Square(int n) {
+    void hollowSquare(int n) {
         for (int i = 0; i < n; i++) {
             //stars
             for (int j = 0; j < n; j++) {
@@ -141,7 +140,7 @@ class Pat
         }
     }
 
-    void hallow_tri(int n) {
+    void hollowTriangle(int n) {
         for (int i = 0; i < n; i++) {
             for (int k = 0; k < i; k++)
             {
@@ -157,7 +156,7 @@ class Pat
         }
     }
 
-    void hallow_pyramid(int n)
+    void hollowPyramid(int n)
     {
         for (int i = 0; i < n; i++)
         {
@@ -183,7 +182,7 @@ class Pat
         }
     }
 
-    void Floyd_Triangle(int n)
+    void floydTriangle(int n)
     {
         int num = 1;
         for (int i = 0; i < n; i++)
@@ -199,7 +198,7 @@ class Pat
         }
     }
 
-    void number_tri(int n)
+    void numberTriangle(int n)
     {
 
         for (int i = 0; i < n; i++)
@@ -215,7 +214,7 @@ class Pat
         }
     }
 
-    void reverse_number_tri(int n)
+    void reverseNumberTriangle(int n)
     {
 
         for (int i = 0; i < n; i++)
@@ -231,7 +230,7 @@ class Pat
         }
     }
 
-    void repeated_number_tri(int n)
+    void repeatedNumberTriangle(int n)
     {
         int num = 1;
         for (int i = 0; i < n; i++)
@@ -247,7 +246,7 @@ class Pat
         }
     }
 
-    void Alphabet_Tri(int n)
+    void alphabetTriangle(int n)
     {
         for (int i = 0; i < n; i++)
         {
@@ -262,7 +261,7 @@ class Pat
         }
     }
 
-    void same_alpha_pat(int n)
+    void sameAlphabetPattern(int n)
     {
         char ch = 'A';
         for (int i = 0; i < n; i++)
@@ -278,7 +277,7 @@ class Pat
         }
     }
 
-    void reverse_alpha_pat(int n)
+    void reverseAlphabetPattern(int n)
     {
 
         for (int i = 0; i < n; i++)
@@ -294,7 +293,7 @@ class Pat
         }
     }
 
-    void binary_pattern(int n)
+    void binaryPattern(int n)
     {
         for (int i = 0; i < n; i++)
         {
@@ -314,7 +313,7 @@ class Pat
         }
     }
 
-    void Butterfly_Pattern(int n)
+    void butterflyPattern(int n)
     {
         for (int i = 0; i <n; i++)
         {
@@ -353,7 +352,7 @@ class Pat
         }
     }
 
-    void pascal_triangle(int n)
+    void pascalTriangle(int n)
     {
         for (int i = 0; i < n; i++)
         {
@@ -369,7 +368,7 @@ class Pat
         }
     }
 
-    void sandglass_pattern(int n)
+    void sandglassPattern(int n)
     {
         //upper part
         for (int i = 0; i < n; i++) {
@@ -394,7 +393,7 @@ class Pat
 
     }
 
-    void cross_pattern(int n)
+    void crossPattern(int n)
     {
         for (int i = 0; i < n; i++)
         {
@@ -412,7 +411,7 @@ class Pat
         }
     }
 
-    void zigzag_pattern(int n)
+    void zigzagPattern(int n)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -432,25 +431,57 @@ class Pat
 }
 
 public class Pattern {
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Pat p = new Pat();
 
-        Method[] methods = Pat.class.getDeclaredMethods();
+        System.out.println("--- Java Pattern Generator ---");
+        System.out.println("""
+    1. Square                     2. Left Triangle             3. Inverted Left Triangle
+    4. Right Triangle              5. Inverted Right Triangle    6. Pyramid
+    7. Inverted Pyramid           8. Diamond                   9. Hollow Square
+    10. Hollow Triangle           11. Hollow Pyramid           12. Floyd Triangle
+    13. Number Triangle           14. Reverse Number Triangle  15. Repeated Number Triangle
+    16. Alphabet Triangle         17. Same Alphabet Pattern    18. Reverse Alphabet Pattern
+    19. Binary Pattern            20. Butterfly Pattern        21. Pascal Triangle
+    22. Sandglass Pattern         23. Cross Pattern            24. Zigzag Pattern
+    """);
+        System.out.print("\nSelect a pattern (1-24): ");
 
-        for (Method m : methods) {
-            if (!m.getName().equals("main")) {
-                try {
-                    System.out.println("\npatterns.Pattern: " + m.getName());
-                    m.invoke(p,5);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+        int choice = sc.nextInt();
+        System.out.print("Enter size (n): ");
+        int n = sc.nextInt();
+
+        System.out.println("\nResult:");
+        switch (choice) {
+
+            case 1 -> p.square(n);
+            case 2 -> p.leftTriangle(n);
+            case 3 -> p.invertedLeftTriangle(n);
+            case 4 -> p.rightTriangle(n);
+            case 5 -> p.invertedRightTriangle(n);
+            case 6 -> p.pyramid(n);
+            case 7 -> p.invertedPyramid(n);
+            case 8 -> p.diamond(n);
+            case 9 -> p.hollowSquare(n);
+            case 10 -> p.hollowTriangle(n);
+            case 11 -> p.hollowPyramid(n);
+            case 12 -> p.floydTriangle(n);
+            case 13 -> p.numberTriangle(n);
+            case 14 -> p.reverseNumberTriangle(n);
+            case 15 -> p.repeatedNumberTriangle(n);
+            case 16 -> p.alphabetTriangle(n);
+            case 17 -> p.sameAlphabetPattern(n);
+            case 18 -> p.reverseAlphabetPattern(n);
+            case 19 -> p.binaryPattern(n);
+            case 20 -> p.butterflyPattern(n);
+            case 21 -> p.pascalTriangle(n);
+            case 22 -> p.sandglassPattern(n);
+            case 23 -> p.crossPattern(n);
+            case 24 -> p.zigzagPattern(n);
+            default -> System.out.println("Invalid choice!");
         }
 
         sc.close();
     }
 }
-
