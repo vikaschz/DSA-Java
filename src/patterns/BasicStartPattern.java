@@ -1,7 +1,7 @@
 package patterns;
 import java.util.Scanner;
 
-public class Basic
+public class BasicStartPattern
 {
     private static void square(int n) {
         System.out.println("Square");
